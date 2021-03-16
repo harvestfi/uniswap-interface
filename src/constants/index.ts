@@ -14,11 +14,28 @@ type ChainTokenList = {
   readonly [chainId in ChainId]: Token[]
 }
 
-export const AMPL = new Token(ChainId.MAINNET, '0xD46bA6D942050d489DBd938a2C909A5d5039A161', 9, 'AMPL', 'Ampleforth')
 export const DAI = new Token(ChainId.MAINNET, '0x6B175474E89094C44Da98b954EedeAC495271d0F', 18, 'DAI', 'Dai Stablecoin')
 export const USDC = new Token(ChainId.MAINNET, '0xA0b86991c6218b36c1d19D4a2e9Eb0cE3606eB48', 6, 'USDC', 'USD//C')
 export const USDT = new Token(ChainId.MAINNET, '0xdAC17F958D2ee523a2206206994597C13D831ec7', 6, 'USDT', 'Tether USD')
+export const UST = new Token(ChainId.MAINNET, '0xa47c8bf37f92aBed4A126BDA807A7b7498661acD', 18, 'UST', 'Wrapped UST')
 export const WBTC = new Token(ChainId.MAINNET, '0x2260FAC5E5542a773Aa44fBCfeDf7C193bc2C599', 8, 'WBTC', 'Wrapped BTC')
+
+export const AMPL = new Token(ChainId.MAINNET, '0xD46bA6D942050d489DBd938a2C909A5d5039A161', 9, 'AMPL', 'Ampleforth')
+export const MAAPL = new Token(ChainId.MAINNET, '0xd36932143F6eBDEDD872D5Fb0651f4B72Fd15a84', 18, 'mAAPL', 'Mirror Apple')
+export const MAMZN = new Token(ChainId.MAINNET, '0x0cae9e4d663793c2a2A0b211c1Cf4bBca2B9cAa7', 18, 'mAMSN', 'Mirror Amazon')
+export const MBABA = new Token(ChainId.MAINNET, '0x56aA298a19C93c6801FDde870fA63EF75Cc0aF72', 18, 'mBABA', 'Mirror Alibaba')
+export const MGOOG = new Token(ChainId.MAINNET, '0x59A921Db27Dd6d4d974745B7FfC5c33932653442', 18, 'mGOOG', 'Mirror Google')
+export const MIR = new Token(ChainId.MAINNET, '0x09a3EcAFa817268f77BE1283176B946C4ff2E608', 18, 'MIR', 'Wrapped MIR')
+export const MIAU = new Token(ChainId.MAINNET, '0x1d350417d9787E000cc1b95d70E9536DcD91F373', 18, 'mIAU', 'Mirror Gold Trust')
+export const MMSFT = new Token(ChainId.MAINNET, '0x41BbEDd7286dAab5910a1f15d12CBda839852BD7', 18, 'mMSFT', 'Mirror Microsoft')
+export const MNFLX = new Token(ChainId.MAINNET, '0xC8d674114bac90148d11D3C1d33C61835a0F9DCD', 18, 'mNFLX', 'Mirror Netflix')
+export const MQQQ = new Token(ChainId.MAINNET, '0x13B02c8dE71680e71F0820c996E4bE43c2F57d15', 18, 'mQQQ', 'Mirror QQQ')
+export const MSLV = new Token(ChainId.MAINNET, '0x9d1555d8cB3C846Bb4f7D5B1B1080872c3166676', 18, 'mSLV', 'Mirror Silver Trust')
+export const MTWTR = new Token(ChainId.MAINNET, '0xEdb0414627E6f1e3F082DE65cD4F9C693D78CCA9', 18, 'mTWTR', 'Mirror Twitter')
+export const MTSLA = new Token(ChainId.MAINNET, '0x21cA39943E91d704678F5D00b6616650F066fD63', 18, 'mTSLA', 'Mirror Tesla')
+export const MUSO = new Token(ChainId.MAINNET, '0x31c63146a635EB7465e5853020b39713AC356991', 18, 'mUSO', 'Mirror USOil')
+export const MVIXY = new Token(ChainId.MAINNET, '0xf72FCd9DCF0190923Fadd44811E240Ef4533fc86', 18, 'mVIXY', 'Mirror VIXY')
+
 
 // Block time here is slightly higher (~1s) than average in order to avoid ongoing proposals past the displayed time
 export const AVERAGE_BLOCK_TIME_IN_SECS = 13
@@ -69,7 +86,21 @@ export const BASES_TO_CHECK_TRADES_AGAINST: ChainTokenList = {
  */
 export const CUSTOM_BASES: { [chainId in ChainId]?: { [tokenAddress: string]: Token[] } } = {
   [ChainId.MAINNET]: {
-    [AMPL.address]: [DAI, WETH[ChainId.MAINNET]]
+    [AMPL.address]: [DAI, WETH[ChainId.MAINNET]],
+    [MAAPL.address]: [UST, WETH[ChainId.MAINNET],
+    [MAMZN.address]: [UST, WETH[ChainId.MAINNET],
+    [MBABA.address]: [UST, WETH[ChainId.MAINNET],
+    [MGOOG.address]: [UST, WETH[ChainId.MAINNET],
+    [MIAU.address]: [UST, WETH[ChainId.MAINNET],
+    [MIR.address]: [UST, WETH[ChainId.MAINNET],
+    [MMSFT.address]: [UST, WETH[ChainId.MAINNET],
+    [MNFLX.address]: [UST, WETH[ChainId.MAINNET],
+    [MQQQ.address]: [UST, WETH[ChainId.MAINNET],
+    [MSLV.address]: [UST, WETH[ChainId.MAINNET],
+    [MTSLA.address]: [UST, WETH[ChainId.MAINNET],
+    [MTWTR.address]: [UST, WETH[ChainId.MAINNET],
+    [MUSO.address]: [UST, WETH[ChainId.MAINNET],
+    [MVIXY.address]: [UST, WETH[ChainId.MAINNET]
   }
 }
 
